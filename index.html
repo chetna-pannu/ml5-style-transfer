@@ -8,9 +8,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
     <!-- ml5 -->
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.14/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.14/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.14/dist/js/uikit-icons.min.js"></script>
   </head>
 
   <body>
+    <div class="uk-container">
+      <div class="uk-tile uk-tile-default uk-text-center">
+        <h1 class="uk-heading-medium">Style Transfer using p5.js</h1>
+        <div><p id="statusMsg" class="uk-label uk-label-warning">Loading Models...</p></div>
+        <button id="transferBtn" class="uk-button uk-button-primary">Transfer!</button>
+        <p class="uk-comment">Input Image</p>
+        <img src="img/toronto.jpg" alt="input img" id="inputImg"                             />
+      </div>
+  
+      <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+        <div id="styleA" class="uk-tile uk-tile-muted">
+          <h4 class="uk-card-title">Style A: <a href="https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa">The Great Wave off Kanagawa, 1829 - Katsushika Hokusai</a></h4>
+          <img src="img/model/wave.jpg" width="300" alt="style one"                             />
+        </div>
+      
+        <div id="styleB" class="uk-tile uk-tile-muted">
+          <h4 class="uk-card-title">Style B: <a href="https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa">Udnie (Young American Girl, The Dance), 1913 - Francis Picabia</a></h4>
+          <img src="img/model/udnie.jpg" width="300" alt="style two"                             />
+        </div>
+
+        <div id="styleC" class="uk-tile uk-tile-muted">
+          <h4 class="uk-card-title">Style B: <a href="https://en.wikipedia.org/wiki/The_Scream">The Scream, 1893 - Edvard Munch</a></h4>
+          <img src="img/model/scream.jpg" width="300" alt="style three"                             />
+        </div>
+      </div>
+      <div class="uk-child-width-expand@s uk-text-center uk-margin-bottom" uk-grid>
+        <div id="styleATransfered" class="uk-tile uk-tile-muted">
+        </div>
+      
+        <div id="styleBTransfered" class="uk-tile uk-tile-muted">
+        </div>
+      
+        <div id="styleCTransfered" class="uk-tile uk-tile-muted">
+        </div>
+      </div>
+    </div>
+  
     <script src="sketch.js"></script>
   </body>
 </html>
